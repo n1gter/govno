@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            color: #202124;
+        }
+
+        /* Шапка */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 30px;
+            gap: 15px;
+        }
+
+        header a {
+            color: rgba(0,0,0,0.87);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .apps-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            fill: #5f6368;
+        }
+
+        .sign-in-btn {
+            background-color: #1a73e8;
+            color: white;
+            padding: 9px 23px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #1558d6;
+            text-decoration: none;
+        }
+
+        /* Основной контент */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: -50px;
+        }
+
+        .logo {
+            font-size: 90px;
+            font-weight: 500;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+            user-select: none;
+        }
+
+        .logo span:nth-child(1) { color: #4285F4; }
+        .logo span:nth-child(2) { color: #EA4335; }
+        .logo span:nth-child(3) { color: #FBBC05; }
+        .logo span:nth-child(4) { color: #4285F4; }
+        .logo span:nth-child(5) { color: #34A853; }
+        .logo span:nth-child(6) { color: #EA4335; }
+
+        /* Поисковая строка */
+        .search-container {
+            width: 100%;
+            max-width: 584px;
+            position: relative;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 10px 15px;
+            width: 100%;
+        }
+
+        .search-bar:hover, .search-bar:focus-within {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            border-color: rgba(223,225,229,0);
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            fill: #9aa0a6;
+            margin-right: 12px;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Кнопки поиска */
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-size: 14px;
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+            background-color: #f8f9fa;
+            border: 1px solid #dadce0;
+            color: #202124;
+        }
+
+        /* Подвал */
+        footer {
+            background: #f2f2f2;
+            color: #70757a;
+            font-size: 14px;
+        }
+
+        .footer-location {
+            padding: 15px 30px;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+
+        .footer-links div {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: #70757a;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#">Почта</a>
+        <a href="#">Картинки</a>
+        <!-- Иконка меню приложений (3x3 точки) -->
+        <svg class="apps-icon" viewBox="0 0 24 24">
+            <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+        <a href="#" class="sign-in-btn">Войти</a>
+    </header>
+
+    <main>
+        <div class="logo">
+            <span>м</span><span>е</span><span>л</span><span>д</span>
+        </div>
+
+        <form action="https://www.google.com/search" method="GET" class="search-container">
+            <div class="search-bar">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+                <input type="text" name="q" class="search-input" title="Поиск">
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="btn">Поиск в Google</button>
+                <button type="button" class="btn">Мне повезёт!</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-location">Россия</div>
+        <div class="footer-links">
+            <div>
+                <a href="#">Всё о Google</a>
+                <a href="#">Реклама</a>
+                <a href="#">Для бизнеса</a>
+                <a href="#">Как работает Поиск</a>
+            </div>
+            <div>
+                <a href="#">Конфиденциальность</a>
+                <a href="#">Условия</a>
+                <a href="#">Настройки</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
